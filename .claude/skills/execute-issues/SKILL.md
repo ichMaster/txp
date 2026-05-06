@@ -216,6 +216,42 @@ EOF
 git push
 ```
 
+### Step 5: Update documentation and README
+
+After the execution report is generated, update the project documentation to reflect the new state of the system.
+
+#### 5a. Update `documentation/architecture.md`
+
+Read the current `documentation/architecture.md` and update it to reflect what was implemented in this phase:
+
+- Update the "Current State" section to describe the system's new capabilities
+- Add any new modules to the component tables
+- Update diagrams if the data flow changed
+- Mark the completed phase in the "Implementation Phases" table
+
+#### 5b. Update `README.md`
+
+Update the root `README.md` to reflect the current working state:
+
+- Update the "Usage" section with new commands or features available
+- Update the "Current Status" section to show the latest completed phase
+- Add any new dependencies or setup steps if introduced
+
+#### 5c. Commit documentation update
+
+```bash
+git add documentation/architecture.md README.md
+git commit -m "$(cat <<'EOF'
+Update documentation for phase {N} completion
+
+Reflect new capabilities and architecture changes from phase {N}.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+EOF
+)"
+git push
+```
+
 ## Important Rules
 
 - **One issue at a time.** Never work on multiple issues simultaneously.
