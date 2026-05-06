@@ -37,6 +37,9 @@ def main_server(argv=None):
     print(f"  host:    {args.host}")
     print(f"  port:    {args.port}")
     print(f"  docroot: {args.docroot}")
+
+    from server.listener import start_listener
+    start_listener(args.host, args.port)
     return 0
 
 
